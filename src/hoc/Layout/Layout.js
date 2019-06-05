@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Wrap from '../Wrap/Wrap';
 import classes from './Layout.css';
-import Toolbar from '';
+import Toolbar from '../../components/Navigation/ToolBar/ToolBar';
 
 class Layout extends Component {
 
@@ -21,8 +21,8 @@ class Layout extends Component {
 };
 
 const mapStateToProps = state =>{
-    return {
-        isAuthenticated : state.auth.token !== null
-    }
+  return {
+    isAuthenticated : true
+  }
 }
 export default connect(mapStateToProps)(Layout);

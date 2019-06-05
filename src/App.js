@@ -1,11 +1,12 @@
 import React from 'react';
 import classes from './App.css';
+import Layout from './hoc/Layout/Layout';
 
 function App() {
   return (
-    <div className={classes.App}>
-      Hello WORLD!
-    </div>
+    <Layout >
+      hello
+    </Layout>
   );
 }
 
