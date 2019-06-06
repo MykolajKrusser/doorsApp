@@ -6,6 +6,10 @@
   flex-direction: column;
 }
 
+.Login h1{
+  color:#727272;
+}
+
 .Login input, button{
   min-height: 50px;
   margin: 15px auto;
