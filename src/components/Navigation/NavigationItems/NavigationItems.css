@@ -8,6 +8,15 @@
     flex-direction: column;
 }
 
+select{
+    width: 112px;
+    height: 32px;
+    margin-left: 25px;
+    border: 1px solid rgba(63, 63, 63, 0.555);
+    color: rgba(63, 63, 63, 0.555);
+    padding: 0 10px;
+}
+
 @media (min-width:500px){
     .NavigationItems{
         flex-direction: row;

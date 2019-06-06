@@ -3,15 +3,15 @@ import NavigationItem from './NavigationItem/NavigationItem';
 import classes from './NavigationItems.css'
 
 const navigationItems = (props)=>(
-    <ul className={classes.NavigationItems}>
-        <NavigationItem link="/" exact>1</NavigationItem>
-        {props.isAuthenticated
-            ? <NavigationItem link="/" >2</NavigationItem>
-            : null}
-        {!props.isAuthenticated
-            ? <NavigationItem link="/auth">Login</NavigationItem> 
-            : <NavigationItem link="/logout">Logout</NavigationItem>}
-    </ul>
+  <ul className={classes.NavigationItems}>
+    <div>
+      Select language:
+    </div>
+    <select>
+      <option value="English">English</option>
+      <option value="Polish">Polish</option>
+    </select>
+  </ul>
 );
 
 export default navigationItems;
