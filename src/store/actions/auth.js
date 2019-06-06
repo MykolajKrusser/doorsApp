@@ -1,6 +1,20 @@
 import * as actionType from './actionTypes';
 import axios from 'axios';
 
+export const authEmail = (event)=>{
+  return {
+    type: actionType.AUTH_EMAIL,
+    event: event
+  };
+};
+
+export const authPassword = (event)=>{
+  return {
+    type: actionType.AUTH_PASSWORD,
+    event: event
+  };
+};
+
 export const authStart = ()=>{
   return {
     type: actionType.AUTH_START
@@ -9,14 +23,14 @@ export const authStart = ()=>{
 
 export const authSuccess = ()=>{
   return {
-      type: actionType.AUTH_SUCCESS,
+    type: actionType.AUTH_SUCCESS,
   };
 };
 
 export const authFail = (error)=>{
   return {
-      type: actionType.AUTH_FAIL,
-      error: error
+    type: actionType.AUTH_FAIL,
+    error: error
   };
 };
 
