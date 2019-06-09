@@ -53,7 +53,7 @@ export const auth = (email, password)=>{
     let url = 'https://bench-api.applover.pl/api/v1/session';
     axios.post(url, authData)
       .then( response =>{
-        dispatch(DelaedAuthSuccess(response))
+        dispatch(DelaedAuthSuccess(response.data))
       })
       .catch(err=>{
         dispatch(authFail(err));

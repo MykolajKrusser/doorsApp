@@ -30,8 +30,8 @@ const reducer = (state=initState, action)=>{
     case actionTypes.AUTH_SUCCESS:
       return{
         ...state,
-        token: action.data.data.token,
-        organization: action.data.data.organization,
+        token: action.data.token,
+        organization: action.data.organization,
         error: null,
         loading: false,
       }

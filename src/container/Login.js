@@ -35,7 +35,7 @@ export class Login extends Component{
           <input type="checkbox"/>
           <label htmlFor="scales">Keep me logged in</label>
         </div>
-        <button onClick={this.loginHandler}>Login</button>
+        <button disabled={this.props.loading} onClick={this.loginHandler}>Login</button>
       </div>
     );
   }
@@ -46,7 +46,8 @@ const mapStateToProps = state =>{
     email: state.auth.email,
     password: state.auth.password,
     token: state.auth.token,
-    organization: state.auth.organization
+    organization: state.auth.organization,
+    loading: state.auth.loading
   };
 };
 
