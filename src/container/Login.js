@@ -5,8 +5,15 @@ import axios from 'axios';
 import classes from './Login.css';
 
 import * as action from '../store/actions/actionTypes';
+import * as actions from '../store/actions/index';
 
 export class Login extends Component{
+
+  loginHandler = (event)=>{
+    event.preventDefault();
+    this.props.onLogin(this.props.email, this.props.password)
+  }
+
   render(){
     console.log(this.props.password)
     return(
@@ -28,7 +35,7 @@ export class Login extends Component{
           <input type="checkbox"/>
           <label htmlFor="scales">Keep me logged in</label>
         </div>
-        <button onClick={this.props.onLogin}>Login</button>
+        <button onClick={this.loginHandler}>Login</button>
       </div>
     );
   }
@@ -44,7 +51,8 @@ const mapStateToProps = state =>{
 const mapDispatchToProps = dispatch =>{
   return{
     onChangeEmail: (event)=> dispatch({type: action.AUTH_EMAIL, event: event}),
-    onChangePassword: (event)=> dispatch({type: action.AUTH_PASSWORD, event: event})
+    onChangePassword: (event)=> dispatch({type: action.AUTH_PASSWORD, event: event}),
+    onLogin: (email, password)=> dispatch(actions.auth(email, password))
   };
 };
 
