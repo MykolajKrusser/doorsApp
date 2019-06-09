@@ -4,6 +4,7 @@ const initState = {
   email: '',
   password: '',
   token: null,
+  organization: null,
   error: null,
   loading: false,
 }
@@ -29,6 +30,8 @@ const reducer = (state=initState, action)=>{
     case actionTypes.AUTH_SUCCESS:
       return{
         ...state,
+        token: action.data.data.token,
+        organization: action.data.data.organization,
         error: null,
         loading: false,
       }

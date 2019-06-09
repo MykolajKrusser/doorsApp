@@ -15,7 +15,7 @@ export class Login extends Component{
   }
 
   render(){
-    console.log(this.props.password)
+    console.log(this.props.organization)
     return(
       <div className={classes.Login}>
         <h1>Log in</h1>
@@ -44,7 +44,9 @@ export class Login extends Component{
 const mapStateToProps = state =>{
   return {
     email: state.auth.email,
-    password: state.auth.password
+    password: state.auth.password,
+    token: state.auth.token,
+    organization: state.auth.organization
   };
 };
 

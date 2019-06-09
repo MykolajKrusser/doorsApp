@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import Layout from './hoc/Layout/Layout';
 
 import Login from './container/Login';
+import ProgressBar from './components/UI/ProgressBar/ProgressBar';
 
 
 
@@ -15,9 +16,16 @@ class App extends Component {
         <Redirect to='/'/>
       </Switch>
     );
+
+    let progressBar;
+    if(this.props.loading){
+      progressBar = <ProgressBar/>
+    }
+
     return (
       <div>
         <Layout>
+            {progressBar}
             {routes}
         </Layout>
       </div>
@@ -27,7 +35,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return{
-    
+    loading: state.auth.loading
   };
 };
 

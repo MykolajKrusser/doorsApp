@@ -21,9 +21,18 @@ export const authStart = ()=>{
   };
 };
 
-export const authSuccess = ()=>{
+export const authSuccess = (data)=>{
   return {
     type: actionType.AUTH_SUCCESS,
+    data: data
+  };
+};
+
+export const DelaedAuthSuccess = (data)=>{
+  return dispatch => {
+    setTimeout(()=>{
+      dispatch(authSuccess(data));
+    }, 2000)
   };
 };
 
@@ -44,7 +53,7 @@ export const auth = (email, password)=>{
     let url = 'https://bench-api.applover.pl/api/v1/session';
     axios.post(url, authData)
       .then( response =>{
-        console.log(response)
+        dispatch(DelaedAuthSuccess(response))
       })
       .catch(err=>{
         dispatch(authFail(err));
