@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import errorHandler from '../hoc/withErrorHandler/withErrorHandler';
+import errorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import axios from 'axios';
 import classes from './Login.css';
 
-import * as action from '../store/actions/actionTypes';
-import * as actions from '../store/actions/index';
+import * as action from '../../store/actions/actionTypes';
+import * as actions from '../../store/actions/index';
 
 export class Login extends Component{
 
@@ -23,7 +23,7 @@ export class Login extends Component{
   };
 
   render(){
-    console.log(this.props.token)
+    console.log(this.props.autoLogOut)
     return(
       <div className={classes.Login}>
         <h1>Log in</h1>

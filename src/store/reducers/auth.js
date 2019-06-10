@@ -29,22 +29,24 @@ const reducer = (state=initState, action)=>{
         loading: true
       }
     case actionTypes.AUTH_SUCCESS:
+      if(state.autoLogOut === false || state.autoLogOut === undefined){
+        localStorage.removeItem('token');
+        localStorage.removeItem('organization');
+      }
       if(state.autoLogOut === 'on'){
         let token = action.data.token; 
         let organization= action.data.organization;
         localStorage.setItem('token', JSON.stringify(token));
         localStorage.setItem('organization', JSON.stringify(organization));
       }
-      if(state.autoLogOut === false){
-        localStorage.removeItem('token');
-        localStorage.removeItem('organization');
-      }
+
       return{
         ...state,
         token: action.data.token,
         organization: action.data.organization,
         error: null,
         loading: false,
+        autoLogOut: false
       }
     case actionTypes.AUTH_FAIL:
       return{
