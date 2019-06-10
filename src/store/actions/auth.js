@@ -61,3 +61,19 @@ export const auth = (email, password)=>{
   };
 };
 
+export const autoLogOut = (event)=>{
+  return {
+    type: actionType.AUTH_AUTO_LOGOUT,
+    event: event
+  };
+};
+
+export const autoLogin = (token, organization)=>{
+  return {
+    type: actionType.AUTH_AUTO_LOGIN,
+    token: token, 
+    organization: organization
+  };
+};
+
+

@@ -5,6 +5,7 @@ const initState = {
   password: '',
   token: null,
   organization: null,
+  autoLogOut: false,
   error: null,
   loading: false,
 }
@@ -28,6 +29,16 @@ const reducer = (state=initState, action)=>{
         loading: true
       }
     case actionTypes.AUTH_SUCCESS:
+      if(state.autoLogOut === 'on'){
+        let token = action.data.token; 
+        let organization= action.data.organization;
+        localStorage.setItem('token', JSON.stringify(token));
+        localStorage.setItem('organization', JSON.stringify(organization));
+      }
+      if(state.autoLogOut === false){
+        localStorage.removeItem('token');
+        localStorage.removeItem('organization');
+      }
       return{
         ...state,
         token: action.data.token,
@@ -40,10 +51,16 @@ const reducer = (state=initState, action)=>{
         error: action.error,
         loading: false
       }
-    case actionTypes.AUTH_LOGOUT:
+    case actionTypes.AUTH_AUTO_LOGIN:
       return{
         ...state,
-        token: null,
+        token: action.token,
+        organization: action.organization
+      }
+    case actionTypes.AUTH_AUTO_LOGOUT:
+      return{
+        ...state,
+        autoLogOut: action.event.target.value
       }
     default: return state;
   }

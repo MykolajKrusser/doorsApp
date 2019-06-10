@@ -6,3 +6,6 @@ export const AUTH_LOGOUT = 'AUTH_LOGOUT';
 export const AUTH_EMAIL = 'AUTH_EMAIL';
 export const AUTH_PASSWORD = 'AUTH_PASSWORD';
 export const AUTH_LOADING = 'AUTH_LOADING';
+
+export const AUTH_AUTO_LOGOUT = 'AUTH_AUTO_LOGOUT';
+export const AUTH_AUTO_LOGIN = 'AUTH_AUTO_LOGIN';

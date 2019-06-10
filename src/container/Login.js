@@ -9,13 +9,21 @@ import * as actions from '../store/actions/index';
 
 export class Login extends Component{
 
+  componentDidMount(){
+    if(JSON.parse(localStorage.getItem("token"))){
+      let token = JSON.parse(localStorage.getItem("token"));
+      let organization = JSON.parse(localStorage.getItem("organization"));
+      this.props.onAutoLogin(token, organization);
+    };
+  };
+
   loginHandler = (event)=>{
     event.preventDefault();
-    this.props.onLogin(this.props.email, this.props.password)
-  }
+    this.props.onLogin(this.props.email, this.props.password);
+  };
 
   render(){
-    console.log(this.props.organization)
+    console.log(this.props.token)
     return(
       <div className={classes.Login}>
         <h1>Log in</h1>
@@ -32,7 +40,7 @@ export class Login extends Component{
           value={this.props.password}
         />
         <div className={classes.Checkbox}>
-          <input type="checkbox"/>
+          <input type="checkbox" onChange={this.props.onAutoLogOut}/>
           <label htmlFor="scales">Keep me logged in</label>
         </div>
         <button disabled={this.props.loading} onClick={this.loginHandler}>Login</button>
@@ -47,7 +55,8 @@ const mapStateToProps = state =>{
     password: state.auth.password,
     token: state.auth.token,
     organization: state.auth.organization,
-    loading: state.auth.loading
+    loading: state.auth.loading,
+    autoLogOut: state.auth.autoLogOut
   };
 };
 
@@ -55,7 +64,9 @@ const mapDispatchToProps = dispatch =>{
   return{
     onChangeEmail: (event)=> dispatch({type: action.AUTH_EMAIL, event: event}),
     onChangePassword: (event)=> dispatch({type: action.AUTH_PASSWORD, event: event}),
-    onLogin: (email, password)=> dispatch(actions.auth(email, password))
+    onLogin: (email, password)=> dispatch(actions.auth(email, password)),
+    onAutoLogOut: (event)=> dispatch({type: action.AUTH_AUTO_LOGOUT, event: event}),
+    onAutoLogin: (token, organization)=> dispatch({type: action.AUTH_AUTO_LOGIN, token: token, organization: organization}),
   };
 };
 
