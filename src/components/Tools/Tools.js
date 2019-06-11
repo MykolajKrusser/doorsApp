@@ -7,18 +7,22 @@ const tools = (props)=>(
     <div>
       Select language:
     </div>
-    <select>
-      <option value="English">English</option>
-      <option value="Polish">Polish</option>
-    </select>
-    <button className={classes.ButtonInfo} onClick={props.click}>
-      My organization
-      <div className={classes.TooltipContent}>
-        <div className={classes.TooltipArrow}></div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore blanditiis, placeat minus</p>
-      </div>
-    </button>
-    
+    <div id="google_translate_element"></div>
+    {props.isAuth ? <button className={classes.ButtonInfo} onClick={props.click}>
+        My organization
+        <div className={classes.TooltipContent}>
+          <div className={classes.TooltipArrow}></div>
+          <p>organization name : {props.organization.name}</p>
+          <p>email : {props.organization.email}</p>
+          <p>phone number : {props.organization.phone_number}</p>
+          <p>adress line 1 : {props.organization.address_line_1}</p>
+          <p>adress line 2 : {props.organization.address_line_2}</p>
+          <p>city : {props.organization.city}</p>
+          <p>postal code : {props.organization.postal_code}</p>
+        </div>
+      </button> : null
+    }
+     
   </div>
 );
 
