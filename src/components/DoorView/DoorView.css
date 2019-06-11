@@ -1,0 +1,39 @@
+.DoorView{
+ 
+}
+
+.Door{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 145px;
+  height: 322px;
+  border: 7px solid #5A5858;
+}
+
+.Door2{
+  position: absolute;
+  top: 128px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 145px;
+  height: 322px;
+  border: 7px solid #5A5858;
+}
+
+.DoorPost{
+  height: 100%;
+  width: 7px;
+  background: #5A5858;
+}
+
+.DoorBeem{
+  height: 7px;
+  width: 101%;
+  background: #5A5858;
+  z-index: 1;
+  transform: translateX(-1px);
+}

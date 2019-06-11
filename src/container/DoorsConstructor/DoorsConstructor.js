@@ -8,6 +8,7 @@ import * as action from '../../store/actions/actionTypes';
 import * as actions from '../../store/actions/index';
 
 import StepView from '../../components/StepView/StepView';
+import DoorView from '../../components/DoorView/DoorView';
 
 export class DoorsConstructor extends Component{
 
@@ -15,7 +16,9 @@ export class DoorsConstructor extends Component{
     return(
       <div className={classes.DoorsConstructor}>
         <StepView/>
-        <h1>Doors constructor</h1>
+        <div className={classes.DoorsConstrView}>
+          <DoorView/>
+        </div>
       </div>
     );
   }
