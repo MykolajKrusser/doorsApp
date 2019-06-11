@@ -1,0 +1,71 @@
+.StepView{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 25px auto;
+  text-align: center;
+}
+
+.Step{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.Step p{
+  margin-top: 5px;
+  width: 160px;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: bold;
+  color: #848C93;
+}
+
+.StepDot{
+  width: 45px;
+  height: 45px;
+  border: 1px solid #CDDBE5;
+  border-radius: 50%;
+  background: #CDDBE5;
+}
+
+.StepDotInside{
+  position: relative;
+  top: 45%;
+  left: 45%;
+  width: 5px;
+  height: 5px;
+  border: 1px solid #6991B2;
+  border-radius: 50%;
+  background: #6991B2;
+  z-index: 1;
+}
+
+.StepDotActive{
+  width: 45px;
+  height: 45px;
+  border: 1px solid #CDDBE5;
+  border-radius: 50%;
+  background: #95A3AD;
+}
+.StepDotInsideActive{
+  position: relative;
+  top: 45%;
+  left: 45%;
+  width: 5px;
+  height: 5px;
+  border: 1px solid #FFFFFF;
+  border-radius: 50%;
+  background: #FFFFFF;
+  z-index: 1;
+}
+
+.StepLineDecor{
+  position: absolute;
+  margin-top: 23px;
+  width: 360px;
+  height: 2px;
+  background: #EBF7FF;
+  z-index: -1;
+}

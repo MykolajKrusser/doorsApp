@@ -7,11 +7,14 @@ import classes from './DoorsConstructor.css';
 import * as action from '../../store/actions/actionTypes';
 import * as actions from '../../store/actions/index';
 
+import StepView from '../../components/StepView/StepView';
+
 export class DoorsConstructor extends Component{
 
   render(){
     return(
       <div className={classes.DoorsConstructor}>
+        <StepView/>
         <h1>Doors constructor</h1>
       </div>
     );
