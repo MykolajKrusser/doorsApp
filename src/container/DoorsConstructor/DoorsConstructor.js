@@ -9,6 +9,7 @@ import * as actions from '../../store/actions/index';
 
 import StepView from '../../components/StepView/StepView';
 import DoorView from '../../components/DoorView/DoorView';
+import DoorOptions from './DoorOptions/DoorOptions';
 
 export class DoorsConstructor extends Component{
 
@@ -16,12 +17,15 @@ export class DoorsConstructor extends Component{
     return(
       <div className={classes.DoorsConstructor}>
         <StepView/>
-        <div className={classes.DoorsConstrView}>
-          <div className={classes.SizeView} style={{transform: 'translate(0px, 250px)'}}>250</div>
-          <DoorView/>
-          <DoorView/>
-          <div className={classes.SizeView} style={{transform: 'translate(-115px, 55px)'}}>120</div>
-          <div className={classes.SizeView} style={{transform: 'translate(-200px, 450px)'}}>120</div>
+        <div className={classes.DoorsConstrContainer}>
+          <div className={classes.DoorsConstrView}>
+            <div className={classes.SizeView} style={{transform: 'translate(0px, 250px)'}}>250</div>
+            <DoorView/>
+            <DoorView/>
+            <div className={classes.SizeView} style={{transform: 'translate(-115px, 55px)'}}>120</div>
+            <div className={classes.SizeView} style={{transform: 'translate(-200px, 450px)'}}>120</div>
+          </div>
+          <DoorOptions/>
         </div>
       </div>
     );

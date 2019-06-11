@@ -1,0 +1,6 @@
+.DoorOptions{
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  padding: 25px;
+}
