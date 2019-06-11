@@ -7,6 +7,9 @@
 	display: flex;
 	flex-direction: column;
 }
+:global iframe{
+	display: none;
+}
 :global #google_translate_element{
 	margin-left: 15px;
 }
