@@ -1,5 +1,5 @@
 .DoorView{
- 
+ margin: 100px 10px;
 }
 
 .Door{
@@ -14,7 +14,7 @@
 
 .Door2{
   position: absolute;
-  top: 128px;
+  top: 229px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
