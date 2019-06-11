@@ -2,14 +2,19 @@ import React, { Component } from 'react';
 import {Route, Switch, withRouter, Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 import Layout from './container/Layout/Layout';
+import asyncComponent from './hoc/asyncComponent/asyncComponent';
 
 import Login from './container/Login/Login';
 import ProgressBar from './components/UI/ProgressBar/ProgressBar';
 
+const asyncDoorsConstractor = asyncComponent(()=>{
+  return import ('./container/DoorsConstractor/DoorsConstractor')
+});
 
 
 class App extends Component {
   render() {
+    let progressBar;
     let routes = (
       <Switch>
         <Route path='/' exact component={Login}/>
@@ -17,10 +22,18 @@ class App extends Component {
       </Switch>
     );
 
-    let progressBar;
+    if (this.props.isAuthenticated){
+      routes = (
+        <Switch>
+          <Route path='/' exact component={asyncDoorsConstractor}/>
+          <Redirect to='/'/>
+        </Switch>
+      );
+    };
+
     if(this.props.loading){
       progressBar = <ProgressBar/>
-    }
+    };
 
     return (
       <div>
@@ -35,7 +48,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return{
-    loading: state.auth.loading
+    isAuthenticated: state.auth.token != null
   };
 };
 
