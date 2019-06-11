@@ -7,8 +7,8 @@ import asyncComponent from './hoc/asyncComponent/asyncComponent';
 import Login from './container/Login/Login';
 import ProgressBar from './components/UI/ProgressBar/ProgressBar';
 
-const asyncDoorsConstractor = asyncComponent(()=>{
-  return import ('./container/DoorsConstractor/DoorsConstractor')
+const asyncDoorsConstructor = asyncComponent(()=>{
+  return import ('./container/DoorsConstructor/DoorsConstructor')
 });
 
 
@@ -25,7 +25,7 @@ class App extends Component {
     if (this.props.isAuthenticated){
       routes = (
         <Switch>
-          <Route path='/' exact component={asyncDoorsConstractor}/>
+          <Route path='/' exact component={asyncDoorsConstructor}/>
           <Redirect to='/'/>
         </Switch>
       );
