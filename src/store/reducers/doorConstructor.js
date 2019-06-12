@@ -3,7 +3,7 @@ import * as actionTypes from '../actions/actionTypes';
 const initState = {
   width: 120,
   height: 250,
-  color: 'black',
+  color: 'Black',
   doorType: 'Single door',
   doorOptionStep: 1,
   doorBeems: 4,
@@ -26,6 +26,11 @@ const reducer = (state=initState, action)=>{
       return{
         ...state,
         doorType: action.event.target.value
+      }
+    case actionTypes.DOOR_COLOR:
+      return{
+        ...state,
+        color: action.event.target.value
       }
     case actionTypes.DOOR_STEP_NEXT:
       let stepCount = 1;

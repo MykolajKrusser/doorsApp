@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import errorHandler from '../../../hoc/withErrorHandler/withErrorHandler';
-import axios from 'axios';
 import classes from './DoorOptions.css';
 
 import * as action from '../../../store/actions/actionTypes';
@@ -10,7 +8,6 @@ import * as action from '../../../store/actions/actionTypes';
 import Button from '../../../components/UI/Button/Button';
 
 export class DoorOptions extends Component{
-
   render(){
     let doorsOption = (
       <div className={classes.Common}>
@@ -41,10 +38,36 @@ export class DoorOptions extends Component{
       </div>
     );
 
+    if(this.props.doorOptionStep === 3){
+      doorsOption = (
+        <div className={classes.Common}>
+          <h2>Door devisions</h2>
+          <hr/>
+          <div className={classes.Common}>
+            <div className={classes.CommonColors}>
+              <input id='id7' type="radio" checked={this.props.doorColor === "Black"} value="Black" onChange={this.props.onColorHandler}/>
+              <label htmlFor="id7">Black</label>
+              <div className={classes.DoorColorBlack}></div>
+            </div>
+            <div className={classes.CommonColors}>
+              <input id='id8' type="radio" checked={this.props.doorColor === "Grey"} value="Grey" onChange={this.props.onColorHandler}/>
+              <label htmlFor="id8">Grey </label>
+              <div className={classes.DoorColorGrey}></div>
+            </div>
+            <div className={classes.CommonColors}>
+              <input id='id9' type="radio" checked={this.props.doorColor === "White"} value="White" onChange={this.props.onColorHandler}/>
+              <label htmlFor="id9">White</label>
+              <div className={classes.DoorColorWhite}></div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
     if(this.props.doorOptionStep === 2){
       doorsOption = (
         <div className={classes.Common}>
-          <h2>Door type</h2>
+          <h2>Door color</h2>
           <hr/>
           <div className={classes.Common}>
             <div className={classes.CommonBeemPost}>
@@ -82,7 +105,8 @@ const mapStateToProps = state =>{
     doorType: state.doorConstr.doorType,
     doorOptionStep: state.doorConstr.doorOptionStep,
     doorBeems: state.doorConstr.doorBeems,
-    doorPosts: state.doorConstr.doorPosts
+    doorPosts: state.doorConstr.doorPosts,
+    doorColor: state.doorConstr.color
   };
 };
 
@@ -96,8 +120,9 @@ const mapDispatchToProps = dispatch =>{
     onBeemDoorAdd: ()=> dispatch({type: action.DOOR_BEEM_ADD}),
     onBeemDoorRemove: ()=> dispatch({type: action.DOOR_BEEM_REMOVE}),
     onPostsDoorAdd: ()=> dispatch({type: action.DOOR_POSTS_ADD}),
-    onPostsDoorRemove: ()=> dispatch({type: action.DOOR_POSTS_REMOVE})
+    onPostsDoorRemove: ()=> dispatch({type: action.DOOR_POSTS_REMOVE}),
+    onColorHandler: (event)=> dispatch({type: action.DOOR_COLOR, event: event})
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(errorHandler(DoorOptions, axios));
+export default connect(mapStateToProps, mapDispatchToProps)(DoorOptions);

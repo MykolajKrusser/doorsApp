@@ -21,6 +21,13 @@ export const doorType = (event)=>{
   };
 };
 
+export const doorColor = (event)=>{
+  return {
+    type: actionType.DOOR_COLOR,
+    event: event
+  };
+};
+
 export const doorStepNext = ()=>{
   return {
     type: actionType.DOOR_STEP_NEXT

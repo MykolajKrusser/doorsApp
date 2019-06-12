@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import errorHandler from '../../hoc/withErrorHandler/withErrorHandler';
-import axios from 'axios';
 import classes from './DoorsConstructor.css';
 import Wrap from '../../hoc/Wrap/Wrap';
 
@@ -15,13 +13,13 @@ import DoorOptions from './DoorOptions/DoorOptions';
 export class DoorsConstructor extends Component{
 
   render(){
-     let doors = <DoorView beems={this.props.doorBeems} posts={this.props.doorPosts}/>
+     let doors = <DoorView color={this.props.doorColor} beems={this.props.doorBeems} posts={this.props.doorPosts}/>
      
      if(this.props.doorType === "Double door"){
         doors = (
           <Wrap>
-            <DoorView beems={this.props.doorBeems} posts={this.props.doorPosts}/>
-            <DoorView beems={this.props.doorBeems} posts={this.props.doorPosts}/>
+            <DoorView color={this.props.doorColor} beems={this.props.doorBeems} posts={this.props.doorPosts}/>
+            <DoorView color={this.props.doorColor} beems={this.props.doorBeems} posts={this.props.doorPosts}/>
           </Wrap>
         )
     }
@@ -50,14 +48,9 @@ const mapStateToProps = state =>{
     doorType: state.doorConstr.doorType,
     doorOptionStep: state.doorConstr.doorOptionStep,
     doorBeems: state.doorConstr.doorBeems,
-    doorPosts: state.doorConstr.doorPosts
+    doorPosts: state.doorConstr.doorPosts,
+    doorColor: state.doorConstr.color
   };
 };
 
-const mapDispatchToProps = dispatch =>{
-  return{
-    
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(errorHandler(DoorsConstructor, axios));
+export default connect(mapStateToProps)(DoorsConstructor);

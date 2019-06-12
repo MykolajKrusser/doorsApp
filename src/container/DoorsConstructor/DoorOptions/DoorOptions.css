@@ -72,3 +72,34 @@
 .LeftFix{
   margin-left: 7px;
 }
+
+.DoorColorBlack{
+  width: 35px;
+  height: 35px;
+  background: black;
+  border-radius: 50%;
+}
+
+.DoorColorGrey{
+  width: 35px;
+  height: 35px;
+  background: gray;
+  border-radius: 50%;
+}
+
+.DoorColorWhite{
+  width: 35px;
+  height: 35px;
+  background: white;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.CommonColors{
+  display: flex;
+  flex-direction: row;
+}
+.CommonColors div{
+  transform: translateY(-15px);
+  margin-left: 15px;
+}
