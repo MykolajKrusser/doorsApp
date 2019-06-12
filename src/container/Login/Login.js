@@ -23,7 +23,6 @@ export class Login extends Component{
   };
 
   render(){
-    console.log(this.props.autoLogOut)
     return(
       <div className={classes.Login}>
         <h1>Log in</h1>

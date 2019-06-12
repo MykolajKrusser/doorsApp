@@ -32,11 +32,11 @@ export class DoorOptions extends Component{
           <div className={classes.CommonSize}>
             <div>
               <label htmlFor="id3">Width:</label>
-              <input id="id3" type="number" value={this.props.doorWidth} onChange={this.props.onDoorWidthHandler}/>
+              <input id="id3" type="number" max='160' value={this.props.doorWidth} onChange={this.props.onDoorWidthHandler}/>
             </div>
             <div>
               <label htmlFor="id4">Height:</label>
-              <input id="id4" type="number" value={this.props.doorHeight} onChange={this.props.onDoorHeightHandler}/>
+              <input id="id4" type="number" max='300' value={this.props.doorHeight} onChange={this.props.onDoorHeightHandler}/>
             </div>
           </div>
         </div>
@@ -50,7 +50,7 @@ const mapStateToProps = state =>{
   return {
     doorWidth: state.doorConstr.width,
     doorHeight: state.doorConstr.height,
-    doorType: state.doorConstr.type,
+    doorType: state.doorConstr.doorType,
   };
 };
 

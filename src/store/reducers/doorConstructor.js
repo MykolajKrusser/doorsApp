@@ -4,7 +4,8 @@ const initState = {
   width: 120,
   height: 250,
   color: 'black',
-  doorType: 'single'
+  doorType: 'Single door',
+  doorOptionStep: 1,
 }
 
 const reducer = (state=initState, action)=>{
@@ -22,7 +23,7 @@ const reducer = (state=initState, action)=>{
     case actionTypes.DOOR_TYPE:
       return{
         ...state,
-        type: action.event.target.value
+        doorType: action.event.target.value
       }
     default: return state;
   }

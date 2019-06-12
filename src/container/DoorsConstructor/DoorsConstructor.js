@@ -36,7 +36,7 @@ const mapStateToProps = state =>{
   return {
     doorWidth: state.doorConstr.width,
     doorHeight: state.doorConstr.height,
-    doorType: state.doorConstr.type,
+    doorType: state.doorConstr.doorType,
   };
 };
 

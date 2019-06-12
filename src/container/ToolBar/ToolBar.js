@@ -7,7 +7,6 @@ import Logo from '../../components/UI/Logo/Logo';
 class ToolBar extends Component {
   
   render(){
-    console.log(this.props.organization)
     return (
       <header className={classes.ToolBar}>
         <Logo/>
