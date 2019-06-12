@@ -15,14 +15,13 @@ import DoorOptions from './DoorOptions/DoorOptions';
 export class DoorsConstructor extends Component{
 
   render(){
-    console.log(this.props.doorOptionStep)
-     let doors = <DoorView/>
+     let doors = <DoorView beems={this.props.doorBeems} posts={this.props.doorPosts}/>
      
      if(this.props.doorType === "Double door"){
         doors = (
           <Wrap>
-            <DoorView/>
-            <DoorView/>
+            <DoorView beems={this.props.doorBeems} posts={this.props.doorPosts}/>
+            <DoorView beems={this.props.doorBeems} posts={this.props.doorPosts}/>
           </Wrap>
         )
     }
@@ -34,8 +33,8 @@ export class DoorsConstructor extends Component{
           <div className={classes.DoorsConstrView}>
             <div className={classes.SizeView} style={{transform: 'translate(0px, 250px)'}}>{this.props.doorHeight}</div>
             {doors}
-            <div className={classes.SizeView} style={{transform: 'translate(-125px, 55px)'}}>{this.props.doorWidth}</div>
-            <div className={classes.SizeView} style={{transform: 'translate(-215px, 450px)'}}>{this.props.doorWidth}</div>
+            <div className={classes.SizeView} style={{transform: 'translate(-115px, 55px)'}}>{this.props.doorWidth}</div>
+            <div className={classes.SizeView} style={{transform: 'translate(-205px, 450px)'}}>{this.props.doorWidth}</div>
           </div>
           <DoorOptions/>
         </div>
@@ -49,7 +48,9 @@ const mapStateToProps = state =>{
     doorWidth: state.doorConstr.width,
     doorHeight: state.doorConstr.height,
     doorType: state.doorConstr.doorType,
-    doorOptionStep: state.doorConstr.doorOptionStep
+    doorOptionStep: state.doorConstr.doorOptionStep,
+    doorBeems: state.doorConstr.doorBeems,
+    doorPosts: state.doorConstr.doorPosts
   };
 };
 

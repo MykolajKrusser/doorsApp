@@ -21,16 +21,38 @@ export const doorType = (event)=>{
   };
 };
 
-export const doorStepNext = (event)=>{
+export const doorStepNext = ()=>{
   return {
-    type: actionType.DOOR_STEP_NEXT,
-    event: event
+    type: actionType.DOOR_STEP_NEXT
   };
 };
 
-export const doorStepBack = (event)=>{
+export const doorStepBack = ()=>{
   return {
-    type: actionType.DOOR_STEP_BACK,
-    event: event
+    type: actionType.DOOR_STEP_BACK
+  };
+};
+
+export const doorBeemAdd = ()=>{
+  return {
+    type: actionType.DOOR_BEEM_ADD
+  };
+};
+
+export const doorBeemRemove = ()=>{
+  return {
+    type: actionType.DOOR_BEEM_REMOVE
+  };
+};
+
+export const doorPostsAdd = ()=>{
+  return {
+    type: actionType.DOOR_POSTS_ADD
+  };
+};
+
+export const doorPostsRemove = ()=>{
+  return {
+    type: actionType.DOOR_POSTS_REMOVE
   };
 };

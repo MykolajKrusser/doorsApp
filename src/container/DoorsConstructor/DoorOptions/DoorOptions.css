@@ -41,3 +41,34 @@
   display: flex;
   flex-direction: row;
 }
+
+.CommonBeemPost{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  min-width: 210px;
+  text-align: center;
+}
+.CommonBeemPost label{
+  padding-top: 3px;
+  margin-right: 5px;
+}
+
+.CommonBeemPost p{
+  width: 24px;
+  height: 24px;
+  border: 1px solid #A8A5A5;
+  padding: 0 6px;
+  margin-right: 5px;
+}
+
+.CommonBeemPost button{
+  width: 24px;
+  height: 24px;
+  border: 1px solid #A8A5A5;
+  background: #CDDBE5;
+}
+
+.LeftFix{
+  margin-left: 7px;
+}

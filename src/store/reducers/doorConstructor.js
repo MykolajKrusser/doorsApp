@@ -6,6 +6,8 @@ const initState = {
   color: 'black',
   doorType: 'Single door',
   doorOptionStep: 1,
+  doorBeems: 4,
+  doorPosts: 2
 }
 
 const reducer = (state=initState, action)=>{
@@ -46,6 +48,50 @@ const reducer = (state=initState, action)=>{
       return{
         ...state,
         doorOptionStep: currentStepBack
+      }
+    case actionTypes.DOOR_BEEM_ADD:
+      let beemAdd = 1;
+      let currentBeems = state.doorBeems;
+      currentBeems = currentBeems + beemAdd;
+      if(currentBeems > 4){
+        currentBeems = 4
+      }
+      return{
+        ...state,
+        doorBeems: currentBeems
+      }
+    case actionTypes.DOOR_BEEM_REMOVE:
+      let beemRemove = 1;
+      let currentBeem = state.doorBeems;
+      currentBeem = currentBeem - beemRemove;
+      if(currentBeem < 1){
+        currentBeem = 1
+      }
+      return{
+        ...state,
+        doorBeems: currentBeem
+      }
+    case actionTypes.DOOR_POSTS_ADD:
+      let postsAdd = 1;
+      let currentPosts= state.doorPosts;
+      currentPosts = currentPosts + postsAdd;
+      if(currentPosts > 4){
+        currentPosts = 4
+      }
+      return{
+        ...state,
+        doorPosts: currentPosts
+      }
+    case actionTypes.DOOR_POSTS_REMOVE:
+      let postsRemove = 1;
+      let currentPost= state.doorPosts;
+      currentPost = currentPost - postsRemove;
+      if(currentPost < 1){
+        currentPost = 1
+      }
+      return{
+        ...state,
+        doorPosts: currentPost
       }
     default: return state;
   }
