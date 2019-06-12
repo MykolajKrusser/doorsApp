@@ -32,7 +32,7 @@
 
 .DoorBeem{
   height: 7px;
-  width: 101%;
+  width: 102%;
   background: #5A5858;
   z-index: 1;
   transform: translateX(-1px);

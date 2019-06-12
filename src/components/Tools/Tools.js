@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from '../UI/Button/Button';
 import classes from './Tools.css';
 
 const tools = (props)=>(
@@ -22,7 +21,6 @@ const tools = (props)=>(
         </div>
       </button> : null
     }
-     
   </div>
 );
 

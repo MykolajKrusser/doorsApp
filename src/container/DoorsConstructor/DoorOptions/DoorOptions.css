@@ -1,6 +1,42 @@
 .DoorOptions{
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  padding-left: 25px;
+  color: #848C93;
+  font-size: 14px;
+}
+.DoorOptions div{
+  margin: 5px 0;
+}
+
+.Common, .CommonSize{
+  display: flex;
+  flex-direction: column;
   justify-content: left;
-  padding: 25px;
+}
+.Common h2{
+  font-size: 14px;
+  margin-top: 5px;
+}
+.Common hr{
+  width: 50%;
+  margin-bottom: 10px;
+}
+.Common input{
+  margin-right: 5px;
+}
+
+.CommonSize div{
+  display: flex;
+  justify-content: space-between;
+}
+
+.CommonSize div input{
+  margin-left: 5px;
+  height: 20px;
+  width: 55px;
+  padding: 0 2px;
+  color: #848C93;
+  font-size: 14px;
 }
