@@ -19,10 +19,10 @@ export class DoorsConstructor extends Component{
         <StepView/>
         <div className={classes.DoorsConstrContainer}>
           <div className={classes.DoorsConstrView}>
-            <div className={classes.SizeView} style={{transform: 'translate(0px, 250px)'}}>250</div>
+            <div className={classes.SizeView} style={{transform: 'translate(0px, 250px)'}}>{this.props.doorHeight}</div>
             <DoorView/>
-            <div className={classes.SizeView} style={{transform: 'translate(-115px, 55px)'}}>120</div>
-            <div className={classes.SizeView} style={{transform: 'translate(-200px, 450px)'}}>120</div>
+            <div className={classes.SizeView} style={{transform: 'translate(-125px, 55px)'}}>{this.props.doorWidth}</div>
+            <div className={classes.SizeView} style={{transform: 'translate(-215px, 450px)'}}>{this.props.doorWidth}</div>
           </div>
           <DoorOptions/>
         </div>
@@ -33,7 +33,8 @@ export class DoorsConstructor extends Component{
 
 const mapStateToProps = state =>{
   return {
-    
+    doorWidth: state.doorConstr.width,
+    doorHeight: state.doorConstr.height
   };
 };
 

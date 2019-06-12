@@ -4,8 +4,8 @@ import errorHandler from '../../../hoc/withErrorHandler/withErrorHandler';
 import axios from 'axios';
 import classes from './DoorOptions.css';
 
-//import * as action from '../../../store/actions/actionTypes';
-//import * as actions from '../../../store/actions/index';
+import * as action from '../../../store/actions/actionTypes';
+
 
 import Button from '../../../components/UI/Button/Button';
 
@@ -32,11 +32,11 @@ export class DoorOptions extends Component{
           <div className={classes.CommonSize}>
             <div>
               <label htmlFor="contactChoice1">Width:</label>
-              <input type="number" value='120' onChange={this.props.handler}/>
+              <input type="number" value={this.props.doorWidth} onChange={this.props.onDoorWidthHandler}/>
             </div>
             <div>
               <label htmlFor="contactChoice1">Height:</label>
-              <input type="number" value='250' onChange={this.props.handler}/>
+              <input type="number" value={this.props.doorHeight} onChange={this.props.onDoorHeightHandler}/>
             </div>
           </div>
         </div>
@@ -48,13 +48,15 @@ export class DoorOptions extends Component{
 
 const mapStateToProps = state =>{
   return {
-    
+    doorWidth: state.doorConstr.width,
+    doorHeight: state.doorConstr.height
   };
 };
 
 const mapDispatchToProps = dispatch =>{
   return{
-    handler: ()=>{}
+    onDoorWidthHandler: (event)=> dispatch({type: action.DOOR_WIDTH, event: event}),
+    onDoorHeightHandler: (event)=> dispatch({type: action.DOOR_HEIGHT, event: event})
   };
 };
 

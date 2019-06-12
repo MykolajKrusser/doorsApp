@@ -9,3 +9,8 @@ export const AUTH_LOADING = 'AUTH_LOADING';
 
 export const AUTH_AUTO_LOGOUT = 'AUTH_AUTO_LOGOUT';
 export const AUTH_AUTO_LOGIN = 'AUTH_AUTO_LOGIN';
+
+export const DOOR_WIDTH = 'DOOR_WIDTH';
+export const DOOR_HEIGHT = 'DOOR_HEIGHT';
+export const DOOR_COLOR = 'DOOR_COLOR';
+export const DOOR_TYPE = 'DOOR_TYPE';
