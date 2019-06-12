@@ -19,6 +19,11 @@ const reducer = (state=initState, action)=>{
         ...state,
         height: action.event.target.value
       }
+    case actionTypes.DOOR_TYPE:
+      return{
+        ...state,
+        type: action.event.target.value
+      }
     default: return state;
   }
 };

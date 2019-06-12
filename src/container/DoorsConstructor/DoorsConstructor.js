@@ -14,6 +14,7 @@ import DoorOptions from './DoorOptions/DoorOptions';
 export class DoorsConstructor extends Component{
 
   render(){
+    console.log(this.props.doorType)
     return(
       <div className={classes.DoorsConstructor}>
         <StepView/>
@@ -34,7 +35,8 @@ export class DoorsConstructor extends Component{
 const mapStateToProps = state =>{
   return {
     doorWidth: state.doorConstr.width,
-    doorHeight: state.doorConstr.height
+    doorHeight: state.doorConstr.height,
+    doorType: state.doorConstr.type,
   };
 };
 
