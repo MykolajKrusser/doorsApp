@@ -25,6 +25,28 @@ const reducer = (state=initState, action)=>{
         ...state,
         doorType: action.event.target.value
       }
+    case actionTypes.DOOR_STEP_NEXT:
+      let stepCount = 1;
+      let currentStep = state.doorOptionStep;
+      currentStep = currentStep + stepCount;
+      if(currentStep > 3){
+        currentStep = 3
+      }
+      return{
+        ...state,
+        doorOptionStep: currentStep
+      }
+    case actionTypes.DOOR_STEP_BACK:
+      let stepCountBack = 1;
+      let currentStepBack = state.doorOptionStep;
+      currentStepBack = currentStepBack - stepCountBack;
+      if(currentStepBack < 1){
+        currentStepBack = 1
+      }
+      return{
+        ...state,
+        doorOptionStep: currentStepBack
+      }
     default: return state;
   }
 };

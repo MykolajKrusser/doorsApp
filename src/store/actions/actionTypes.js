@@ -14,3 +14,5 @@ export const DOOR_WIDTH = 'DOOR_WIDTH';
 export const DOOR_HEIGHT = 'DOOR_HEIGHT';
 export const DOOR_COLOR = 'DOOR_COLOR';
 export const DOOR_TYPE = 'DOOR_TYPE';
+export const DOOR_STEP_NEXT = 'DOOR_STEP_NEXT';
+export const DOOR_STEP_BACK = 'DOOR_STEP_BACK';

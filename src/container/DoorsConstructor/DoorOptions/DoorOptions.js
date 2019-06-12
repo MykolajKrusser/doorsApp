@@ -31,7 +31,7 @@ export class DoorOptions extends Component{
           <hr/>
           <div className={classes.CommonSize}>
             <div>
-              <label htmlFor="id3">Width:</label>
+              <label htmlFor="id3">Width:   </label>
               <input id="id3" type="number" max='160' value={this.props.doorWidth} onChange={this.props.onDoorWidthHandler}/>
             </div>
             <div>
@@ -40,7 +40,10 @@ export class DoorOptions extends Component{
             </div>
           </div>
         </div>
-        <Button>Next step</Button>
+        <div className={classes.DoorOptionsButtons}>
+          {this.props.doorOptionStep > 1 ? <Button click={this.props.onDoorStepBack}>Back</Button> : null}
+          <Button click={this.props.onDoorStepNext}>Next step</Button>
+        </div>
       </div>
     );
   }
@@ -51,6 +54,7 @@ const mapStateToProps = state =>{
     doorWidth: state.doorConstr.width,
     doorHeight: state.doorConstr.height,
     doorType: state.doorConstr.doorType,
+    doorOptionStep: state.doorConstr.doorOptionStep
   };
 };
 
@@ -58,7 +62,9 @@ const mapDispatchToProps = dispatch =>{
   return{
     onDoorWidthHandler: (event)=> dispatch({type: action.DOOR_WIDTH, event: event}),
     onDoorHeightHandler: (event)=> dispatch({type: action.DOOR_HEIGHT, event: event}),
-    onDoorTypeHandler: (event)=> dispatch({type: action.DOOR_TYPE, event: event})
+    onDoorTypeHandler: (event)=> dispatch({type: action.DOOR_TYPE, event: event}),
+    onDoorStepNext: (event)=> dispatch({type: action.DOOR_STEP_NEXT, event: event}),
+    onDoorStepBack: (event)=> dispatch({type: action.DOOR_STEP_BACK, event: event})
   };
 };
 

@@ -20,3 +20,17 @@ export const doorType = (event)=>{
     event: event
   };
 };
+
+export const doorStepNext = (event)=>{
+  return {
+    type: actionType.DOOR_STEP_NEXT,
+    event: event
+  };
+};
+
+export const doorStepBack = (event)=>{
+  return {
+    type: actionType.DOOR_STEP_BACK,
+    event: event
+  };
+};
