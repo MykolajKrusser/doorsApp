@@ -15,24 +15,24 @@ export class DoorOptions extends Component{
         <hr/>
         <div className={classes.Common}>
           <div>
-            <input id='id1' type="radio" checked={this.props.doorType === "Single door"} value="Single door" onChange={this.props.onDoorTypeHandler}/>
-            <label htmlFor="id1">Single door</label>
+            <input id='Singledoor' type="radio" checked={this.props.doorType === "Single door"} value="Single door" onChange={this.props.onDoorTypeHandler}/>
+            <label htmlFor="Singledoor">Single door</label>
           </div>
           <div>
-            <input id='id2' type="radio" checked={this.props.doorType === "Double door"} value="Double door" onChange={this.props.onDoorTypeHandler}/>
-            <label htmlFor="id2">Double door</label>
+            <input id='Doubledoor' type="radio" checked={this.props.doorType === "Double door"} value="Double door" onChange={this.props.onDoorTypeHandler}/>
+            <label htmlFor="Doubledoor">Double door</label>
           </div>
         </div>
         <h2>Door size</h2>
         <hr/>
         <div className={classes.CommonSize}>
           <div>
-            <label htmlFor="id3">Width:   </label>
-            <input id="id3" type="number" max='160' value={this.props.doorWidth} onChange={this.props.onDoorWidthHandler}/>
+            <label htmlFor="Width">Width:   </label>
+            <input id="Width" type="number" max='160' value={this.props.doorWidth} onChange={this.props.onDoorWidthHandler}/>
           </div>
           <div>
-            <label htmlFor="id4">Height:</label>
-            <input id="id4" type="number" max='300' value={this.props.doorHeight} onChange={this.props.onDoorHeightHandler}/>
+            <label htmlFor="Height">Height:</label>
+            <input id="Height" type="number" max='300' value={this.props.doorHeight} onChange={this.props.onDoorHeightHandler}/>
           </div>
         </div>
       </div>
@@ -45,18 +45,18 @@ export class DoorOptions extends Component{
           <hr/>
           <div className={classes.Common}>
             <div className={classes.CommonColors}>
-              <input id='id7' type="radio" checked={this.props.doorColor === "Black"} value="Black" onChange={this.props.onColorHandler}/>
-              <label htmlFor="id7">Black</label>
+              <input id='Black' type="radio" checked={this.props.doorColor === "Black"} value="Black" onChange={this.props.onColorHandler}/>
+              <label htmlFor="Black">Black</label>
               <div className={classes.DoorColorBlack}></div>
             </div>
             <div className={classes.CommonColors}>
-              <input id='id8' type="radio" checked={this.props.doorColor === "Grey"} value="Grey" onChange={this.props.onColorHandler}/>
-              <label htmlFor="id8">Grey </label>
+              <input id='Grey' type="radio" checked={this.props.doorColor === "Grey"} value="Grey" onChange={this.props.onColorHandler}/>
+              <label htmlFor="Grey">Grey </label>
               <div className={classes.DoorColorGrey}></div>
             </div>
             <div className={classes.CommonColors}>
-              <input id='id9' type="radio" checked={this.props.doorColor === "White"} value="White" onChange={this.props.onColorHandler}/>
-              <label htmlFor="id9">White</label>
+              <input id='White' type="radio" checked={this.props.doorColor === "White"} value="White" onChange={this.props.onColorHandler}/>
+              <label htmlFor="White">White</label>
               <div className={classes.DoorColorWhite}></div>
             </div>
           </div>
@@ -71,13 +71,13 @@ export class DoorOptions extends Component{
           <hr/>
           <div className={classes.Common}>
             <div className={classes.CommonBeemPost}>
-              <label htmlFor="id5">Number of beems:</label>
+              <label htmlFor="Numberofbeems">Number of beems:</label>
               <p>{this.props.doorBeems}</p>
               <button onClick={this.props.onBeemDoorAdd}>+</button>
               <button onClick={this.props.onBeemDoorRemove}>-</button>
             </div>
             <div className={classes.CommonBeemPost}>
-              <label htmlFor="id6">Number of posts: </label>
+              <label htmlFor="Numberofposts">Number of posts: </label>
               <p className={classes.LeftFix}>{this.props.doorPosts}</p>
               <button onClick={this.props.onPostsDoorAdd}>+</button>
               <button onClick={this.props.onPostsDoorRemove}>-</button>

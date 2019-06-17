@@ -3,9 +3,6 @@ import {connect} from 'react-redux';
 import classes from './DoorsConstructor.css';
 import Wrap from '../../hoc/Wrap/Wrap';
 
-//import * as action from '../../store/actions/actionTypes';
-//import * as actions from '../../store/actions/index';
-
 import StepView from '../../components/StepView/StepView';
 import DoorView from '../../components/DoorView/DoorView';
 import DoorOptions from './DoorOptions/DoorOptions';

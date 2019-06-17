@@ -39,8 +39,8 @@ export class Login extends Component{
           value={this.props.password}
         />
         <div className={classes.Checkbox}>
-          <input type="checkbox" onChange={this.props.onAutoLogOut}/>
-          <label htmlFor="scales">Keep me logged in</label>
+          <input id='autoLogIn' type="checkbox" onChange={this.props.onAutoLogOut}/>
+          <label htmlFor="autoLogIn">Keep me logged in</label>
         </div>
         <button disabled={this.props.loading} onClick={this.loginHandler}>Login</button>
       </div>
