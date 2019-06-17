@@ -1,5 +1,5 @@
 import * as actionType from './actionTypes';
-import axios from 'axios';
+import axios from '../../axios-config';
 
 export const authEmail = (event)=>{
   return {
@@ -50,8 +50,8 @@ export const auth = (email, password)=>{
       'email': email,
       'password': password,
     }
-    let url = 'https://bench-api.applover.pl/api/v1/session';
-    axios.post(url, authData)
+    const session = '/session';
+    axios.post(session, authData)
       .then( response =>{
         dispatch(DelaedAuthSuccess(response.data))
       })

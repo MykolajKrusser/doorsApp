@@ -91,7 +91,7 @@ export class DoorOptions extends Component{
         {doorsOption}
         <div className={classes.DoorOptionsButtons}>
           {this.props.doorOptionStep > 1 ? <Button click={this.props.onDoorStepBack}>Back</Button> : null}
-          <Button click={this.props.onDoorStepNext}>Next step</Button>
+          {this.props.doorOptionStep < 3 ? <Button click={this.props.onDoorStepNext}>Next step</Button> : null}
         </div>
       </div>
     );
